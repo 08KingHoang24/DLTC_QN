@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Lam Thắng Cảnh Quảng Ngãi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo3.png" alt="HCMUTE" class="logo">
+        </div>
+        <h1>DANH LAM THẮNG CẢNH QUẢNG NGÃI</h1>
+        <div id="banner">
+            <div class="tag">
+                <button onclick="function_q1()"><b>Thác Trắng Minh Long</b></button>
+                <button onclick="function_q2()"><b>Mũi Ba Làng An</b></button>
+                <button onclick="function_q3()"><b>Bãi Muối Sa Huỳnh</b></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="clock-container">
+        <span id="clock">00:00:00</span>
+    </div>
+
+    <div class="main-content">
+        <!-- Hàng hiển thị các thông số cảm biến -->
+        <section class="sensor-row">
+            <div class="sensor">
+                <img src="nhietdo3.png" alt="Nhiệt độ">
+                <p>Nhiệt độ: <span id="tempValue">--</span>°C</p>
+            </div>
+            <div class="sensor">
+                <img src="doam3.png" alt="Độ ẩm">
+                <p>Độ ẩm: <span id="humidityValue">--</span>%</p>
+            </div>
+            <div class="sensor">
+                <img src="luongmua3.png" alt="Lượng mưa">
+                <p>Lượng mưa: <span id="rainValue">--</span> mm</p>
+            </div>
+        </section>
+
+        <!-- Hàng hiển thị các thiết bị điều khiển -->
+        <section class="device-row">
+            <div class="device">
+                <h2>Khẩn cấp</h2>
+                <img id="sosImg" src="call2.png" alt="SOS">
+                <button onclick="toggleDevice('sos', 'sosImg')">On</button>
+                <button onclick="toggleDevice('sos', 'sosImg', false)">Off</button>
+            </div>
+            <div class="device">
+                <h2>Báo động</h2>
+                <img id="alarmImg" src="denon2.png" alt="Báo động">
+                <button onclick="toggleDevice('alarm', 'alarmImg')">On</button>
+                <button onclick="toggleDevice('alarm', 'alarmImg', false)">Off</button>
+            </div>
+            <div class="device">
+                <h2>Loa phát thanh</h2>
+                <img id="speakerImg" src="loaon1.png" alt="Loa">
+                <button onclick="toggleDevice('speaker', 'speakerImg')">On</button>
+                <button onclick="toggleDevice('speaker', 'speakerImg', false)">Off</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Biểu đồ ở dưới cùng -->
+    <div class="chart-container">
+        <canvas id="weatherChart"></canvas>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
